@@ -1,9 +1,22 @@
+import { useQuery } from "@tanstack/react-query";
+import { fetchArtImages } from "./fetchArtImages";
 
 function App() {
+  const { data, isLoading, error } = useQuery({
+    queryKey: ["images"],
+    queryFn: fetchArtImages,
+  });
+
+  if (isLoading) return "Loading...";
+
+  if (error) return "Something went wrong!";
+
   return (
-    <>
-      <h1 className="text-3xl font-bold underline">Hello world!</h1>
-    </>
+    <div>
+      {data?.images.map((image) => (
+        <p>{image.title}</p>
+      ))}
+    </div>
   );
 }
 
