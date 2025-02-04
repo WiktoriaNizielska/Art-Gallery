@@ -16,10 +16,10 @@ function App() {
       <header>Art gallery - Art Institute of Chicago</header>
       <main>
         {data?.images.map((image) => (
-          <>
+          <div key={image.id}>
             <img src={image.imageUrl || undefined} alt={image.title}></img>
             <h2>{image.title}</h2>
-          </>
+          </div>
         ))}
       </main>
     </>
