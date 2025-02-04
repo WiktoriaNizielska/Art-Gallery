@@ -12,11 +12,17 @@ function App() {
   if (error) return "Something went wrong!";
 
   return (
-    <div>
-      {data?.images.map((image) => (
-        <p>{image.title}</p>
-      ))}
-    </div>
+    <>
+      <header>Art gallery - Art Institute of Chicago</header>
+      <main>
+        {data?.images.map((image) => (
+          <>
+            <img src={image.imageUrl || undefined} alt={image.title}></img>
+            <h2>{image.title}</h2>
+          </>
+        ))}
+      </main>
+    </>
   );
 }
 
