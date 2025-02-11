@@ -13,8 +13,8 @@ function App() {
 
   return (
     <>
-      <header className="m-2">Art gallery - Art Institute of Chicago</header>
-      <main className="max-lg:grid-cols-4 max-md:grid-cols-3 max-sm:grid-cols-1 grid grid-cols-5 gap-5 m-2 ">
+      <header className="m-10">Art gallery - Art Institute of Chicago</header>
+      <main className="max-lg:grid-cols-4 max-md:grid-cols-3 max-sm:grid-cols-1 grid grid-cols-5 gap-x-3 gap-y-10 m-2 ">
         {data?.images.map((image) => (
           <div key={image.id} className="max-w-3xs mb-10">
             <img
@@ -22,7 +22,7 @@ function App() {
               alt={image.title}
               className=" w-full h-full object-cover shadow-lg"
             ></img>
-            <h2>{image.title}</h2>
+            <h2 className="mt-3">{image.title}</h2>
           </div>
         ))}
       </main>
