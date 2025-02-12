@@ -1,8 +1,10 @@
 import { ArtQueryResult, ArtworkData } from "./types";
 
-export const fetchArtImages = async (): Promise<ArtQueryResult> => {
+export const fetchArtImages = async ({
+  pageParam = 1,
+}): Promise<ArtQueryResult> => {
   const response = await fetch(
-    `https://api.artic.edu/api/v1/artworks?limit=20&fields=id,title,image_id`
+    `https://api.artic.edu/api/v1/artworks?page=${pageParam}&limit=20&fields=id,title,image_id`
   );
 
   if (!response.ok) {
@@ -21,5 +23,10 @@ export const fetchArtImages = async (): Promise<ArtQueryResult> => {
           : null,
       }))
       .filter((img) => img.imageUrl),
+
+    pagination: {
+      currentPage: data.pagination.current_page,
+      totalPages: data.pagination.total_pages,
+    },
   };
 };

@@ -1,11 +1,22 @@
 import { useQuery } from "@tanstack/react-query";
 import { fetchArtImages } from "./fetchArtImages";
+import { useState } from "react";
 
 function App() {
+  const [page, setPage] = useState(1);
+
   const { data, isLoading, error } = useQuery({
-    queryKey: ["images"],
-    queryFn: fetchArtImages,
+    queryKey: ["images", page],
+    queryFn: () => fetchArtImages({ pageParam: page }),
   });
+
+  const setNextPage = () => {
+    setPage((page) => page + 1);
+  };
+
+  const setPreviousPage = () => {
+    setPage((page) => page - 1);
+  };
 
   if (isLoading) return "Loading...";
 
@@ -26,6 +37,24 @@ function App() {
           </div>
         ))}
       </main>
+      <footer className="m-8">
+        <div className="flex gap-3 justify-center">
+          <button
+            onClick={setPreviousPage}
+            className="w-24 p-1 border rounded-md border-blue-200 transition duration-500 hover:bg-blue-100 "
+          >
+            Previous
+          </button>
+          <p className=" p-1 ">{page}</p>
+          <button
+            onClick={setNextPage}
+            className=" w-24 p-1 border rounded-md border-blue-200 transition duration-500 hover:bg-blue-100 "
+          >
+            {" "}
+            Next{" "}
+          </button>
+        </div>
+      </footer>
     </>
   );
 }

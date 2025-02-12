@@ -4,6 +4,10 @@ export interface ArtworkData {
     title: string;
     image_id: string;
   }[];
+  pagination: {
+    current_page: number;
+    total_pages: number;
+  };
 }
 
 export interface ProcessedArt {
@@ -14,4 +18,8 @@ export interface ProcessedArt {
 
 export interface ArtQueryResult {
   images: ProcessedArt[];
+  pagination: {
+    currentPage: number;
+    totalPages: number;
+  };
 }
