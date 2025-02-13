@@ -24,7 +24,11 @@ function App() {
 
   return (
     <>
-      <header className="m-10">Art gallery - Art Institute of Chicago</header>
+      <header className="mt-5 py-5 px-10 bg-slate-400/50 shadow-md grid grid-flow-col grid-rows-2 justify-start gap-x-5 ">
+        <img src="src/logo.png" alt="logo" className="w-20 row-span-3"></img>
+        <h1 className="mb-2 font-semibold col-span-2 text-xl self-end ">ART GALLERY</h1>
+        <p className="col-span-2 row-span-1 ">Art Institute of Chicago</p>
+      </header>
       <main className="grid grid-cols-1 gap-x-5 gap-y-10 m-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 ">
         {data?.images.map((image) => (
           <div key={image.id} className="max-w-3xs mb-10 md:max-h-48">
