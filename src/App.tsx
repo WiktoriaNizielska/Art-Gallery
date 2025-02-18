@@ -23,28 +23,32 @@ function App() {
   if (error) return "Something went wrong!";
 
   return (
-    <>
-      <header className="mt-5  bg-slate-400/20 shadow-md flex  items-end gap-2 px-10 py-3 sm:gap-6 sm:py-5 ">
+    <div className="font-[Cinzel] text-xs">
+      <header className=" mt-5  bg-slate-400/20 shadow-md flex  items-end gap-2 px-10 py-3 sm:gap-6 sm:py-5 ">
         <img src="src/logo.png" alt="logo" className=" w-12 sm:w-20 "></img>
-        <div className="text-xs">
-          <h1 className="mb-2 font-semibold sm:text-xl  ">ART GALLERY</h1>
-          <h2>Art Institute of Chicago</h2>
+        <div>
+          <h1 className="mb-2 font-semibold sm:text-xl 2xl:text-2xl">
+            ART GALLERY
+          </h1>
+          <h2 className="2xl:text-lg">Art Institute of Chicago</h2>
         </div>
       </header>
-      <main className="grid grid-cols-1 gap-x-5 gap-y-10 m-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 ">
+      <main className="grid grid-cols-1 gap-x-5 gap-y-10 m-10 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 2xl:gap-x-7 2xl:gap-y-20">
         {data?.images.map((image) => (
-          <div key={image.id} className="max-w-3xs mb-10 md:max-h-48">
+          <div key={image.id} className="max-w-3xs mb-10">
             <img
               src={image.imageUrl || undefined}
               alt={image.title}
               className=" w-full h-full object-cover shadow-lg"
             ></img>
-            <h2 className="mt-3 line-clamp-2">{image.title}</h2>
+            <h2 className="mt-3 line-clamp-2 xl:text-sm 2xl:text-2xl">
+              {image.title}
+            </h2>
           </div>
         ))}
       </main>
-      <footer className="m-8">
-        <div className="flex gap-3 justify-center">
+      <footer className="m-8 sm:text-sm 2xl:text-lg">
+        <div className="flex gap-1 justify-center sm:gap-3">
           <button
             onClick={setPreviousPage}
             className="w-24 p-1 border rounded-md border-blue-200 transition duration-500 hover:bg-blue-100 "
@@ -61,7 +65,7 @@ function App() {
           </button>
         </div>
       </footer>
-    </>
+    </div>
   );
 }
 
