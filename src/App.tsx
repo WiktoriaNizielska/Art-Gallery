@@ -33,7 +33,7 @@ function App() {
           <h2 className="2xl:text-lg">Art Institute of Chicago</h2>
         </div>
       </header>
-      <main className="grid grid-cols-1 gap-x-5 gap-y-10 m-10 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 2xl:gap-x-7 2xl:gap-y-20">
+      <main className="grid grid-cols-1 gap-x-5 gap-y-10 m-10 mb-12 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 2xl:gap-x-7 2xl:gap-y-20">
         {data?.images.map((image) => (
           <div key={image.id} className="max-w-3xs mb-10">
             <img
@@ -47,21 +47,21 @@ function App() {
           </div>
         ))}
       </main>
-      <footer className="m-8 sm:text-sm 2xl:text-lg">
-        <div className="flex gap-1 justify-center sm:gap-3">
+      <footer className="m-8 sm:text-sm xl:text-lg 2xl:text-3xl">
+        <div className="flex gap-1 justify-center items-center sm:gap-3">
           <button
             onClick={setPreviousPage}
-            className="w-24 p-1 border rounded-md border-blue-200 transition duration-500 hover:bg-blue-100 "
+            disabled={page === 1}
+            className=" disabled:text-gray-600 disabled:border-gray-200 disabled:hover:bg-gray-50 w-24 py-1 px-3 border rounded-md border-blue-200 transition duration-500 hover:bg-blue-100 xl:w-32 2xl:px-5 2xl:py-2 2xl:w-48 "
           >
             Previous
           </button>
           <p className=" p-1 ">{page}</p>
           <button
             onClick={setNextPage}
-            className=" w-24 p-1 border rounded-md border-blue-200 transition duration-500 hover:bg-blue-100 "
+            className=" w-24 p-1 border rounded-md border-blue-200 transition duration-500 hover:bg-blue-100 xl:w-32 2xl:px-5 2xl:py-2 2xl:w-48"
           >
-            {" "}
-            Next{" "}
+            Next
           </button>
         </div>
       </footer>
