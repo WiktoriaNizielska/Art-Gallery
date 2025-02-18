@@ -18,7 +18,12 @@ function App() {
     setPage((page) => page - 1);
   };
 
-  if (isLoading) return "Loading...";
+  if (isLoading)
+    return (
+      <div className="text-2xl text-slate-700 m-40 text-center">
+        Gallery loading...
+      </div>
+    );
 
   if (error) return "Something went wrong!";
 
