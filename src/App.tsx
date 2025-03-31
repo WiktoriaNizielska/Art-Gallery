@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { fetchArtImages } from "./fetchArtImages";
 import { useState } from "react";
+import logo from "./logo.png"
 
 function App() {
   const [page, setPage] = useState(1);
@@ -30,7 +31,7 @@ function App() {
   return (
     <div className="font-[Cinzel] text-xs">
       <header className=" mt-5  bg-slate-400/20 shadow-md flex  items-end gap-2 px-10 py-3 sm:gap-6 sm:py-5 ">
-        <img src="src/logo.png" alt="logo" className=" w-12 sm:w-20 "></img>
+        <img src={logo} alt="logo" className=" w-12 sm:w-20 "></img>
         <div>
           <h1 className="mb-2 font-semibold sm:text-xl 2xl:text-2xl">
             ART GALLERY
