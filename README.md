@@ -1,50 +1,16 @@
-# React + TypeScript + Vite
+# 🏺 Art Gallery 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Screen](./images/readme.gif)
 
-Currently, two official plugins are available:
+This app will let you discover beautiful artworks from Art Institute of Chicago. 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Demo: https://wiktorianizielska.github.io/Art-Gallery/
 
-## Expanding the ESLint configuration
+## Technologies:
+- React
+- Vite
+- Typescript
+- TanStack Query
+- Tailwind
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+![Static Badge](https://img.shields.io/badge/REACT-%20?style=for-the-badge&logo=react&logoColor=black&color=%2361DBFB) ![Static Badge](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white) ![Static Badge](https://img.shields.io/badge/TAILWIND-%20?style=for-the-badge&logo=tailwind%20css&logoColor=white&color=%2306b6d4) ![Static Badge](https://img.shields.io/badge/vite-%20?style=for-the-badge&logo=vite&logoColor=white&color=%23B28DD8) ![Static Badge](https://img.shields.io/badge/TanStack%20Query-%20?style=for-the-badge&logo=react&logoColor=black&color=%2361dbfb)
