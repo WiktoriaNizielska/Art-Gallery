@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { fetchArtImages } from "./fetchArtImages";
 import { useState } from "react";
-import logo from "./logo.png"
+import logo from "./logo.png";
 
 function App() {
   const [page, setPage] = useState(1);
@@ -53,7 +53,7 @@ function App() {
           </div>
         ))}
       </main>
-      <footer className="m-8 sm:text-sm xl:text-lg 2xl:text-3xl">
+      <footer className="m-8 sm:text-sm xl:text-lg 2xl:text-3xl 2xl:mt-28">
         <div className="flex gap-1 justify-center items-center sm:gap-3">
           <button
             onClick={setPreviousPage}
